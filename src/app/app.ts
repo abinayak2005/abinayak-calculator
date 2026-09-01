@@ -16,42 +16,44 @@ export class App {
   operation: string = '+';
 
   result: number = 0;
+  
+  errorMessage: string = '';
 
 
-  // Calculate button click pannumbothu idhu run aagum
+  // Calculate button click - PRODUCTION VERSION: Only Addition for Positive Integers
   calculate(): void {
+    this.errorMessage = '';
 
-    if (this.operation === '+') {
-
-      this.result = this.firstNumber + this.secondNumber;
-
-    } else if (this.operation === '-') {
-
-      this.result = this.firstNumber - this.secondNumber;
-
+    // Validate positive integers only
+    if (this.firstNumber < 0 || this.secondNumber < 0) {
+      this.errorMessage = 'Error: Only positive integers are supported in this version';
+      this.result = 0;
+      return;
     }
 
+    if (this.operation === '+') {
+      this.result = this.firstNumber + this.secondNumber;
+    } else {
+      this.errorMessage = 'Error: Only addition is supported in this version';
+      this.result = 0;
+    }
   }
 
 
   // + or - button select panna
   setOperation(operation: string): void {
-
     this.operation = operation;
-
+    this.errorMessage = '';
   }
 
 
   // Reset button click panna
   reset(): void {
-
     this.firstNumber = 0;
     this.secondNumber = 0;
-
     this.operation = '+';
-
     this.result = 0;
-
+    this.errorMessage = '';
   }
 
 }

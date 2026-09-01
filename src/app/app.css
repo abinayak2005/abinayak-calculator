@@ -61,6 +61,23 @@ input {
   background: white;
 }
 
+.operation button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: #f0f0f0;
+}
+
+.error-message {
+  padding: 12px;
+  margin-bottom: 20px;
+  background: #ffebee;
+  border: 1px solid #ef5350;
+  border-radius: 8px;
+  color: #c62828;
+  font-weight: bold;
+  text-align: center;
+}
+
 .calculate {
   flex: 1;
   padding: 13px;
