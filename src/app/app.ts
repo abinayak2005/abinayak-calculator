@@ -20,7 +20,7 @@ export class App {
   errorMessage: string = '';
 
 
-  // Calculate button click - PRODUCTION VERSION: Only Addition for Positive Integers
+  // Calculate button click - DEVELOPMENT VERSION: Addition & Subtraction for Positive Integers
   calculate(): void {
     this.errorMessage = '';
 
@@ -33,8 +33,10 @@ export class App {
 
     if (this.operation === '+') {
       this.result = this.firstNumber + this.secondNumber;
+    } else if (this.operation === '-') {
+      this.result = this.firstNumber - this.secondNumber;
     } else {
-      this.errorMessage = 'Error: Only addition is supported in this version';
+      this.errorMessage = 'Error: Unsupported operation';
       this.result = 0;
     }
   }
