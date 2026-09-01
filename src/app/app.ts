@@ -20,16 +20,9 @@ export class App {
   errorMessage: string = '';
 
 
-  // Calculate button click - PRODUCTION VERSION: Only Addition for Positive Integers
+  // Calculate button click - PRODUCTION VERSION: Addition for All Integers (including negatives)
   calculate(): void {
     this.errorMessage = '';
-
-    // Validate positive integers only
-    if (this.firstNumber < 0 || this.secondNumber < 0) {
-      this.errorMessage = 'Error: Only positive integers are supported in this version';
-      this.result = 0;
-      return;
-    }
 
     if (this.operation === '+') {
       this.result = this.firstNumber + this.secondNumber;
